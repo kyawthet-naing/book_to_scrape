@@ -47,7 +47,10 @@ let fetch = async (url) => {
           ? null
           : `https://books.toscrape.com/catalogue/${preLink}`,
       current_link: url,
-      next_link: `https://books.toscrape.com/catalogue/${nxtLink}`,
+      next_link:
+        nxtLink == undefined
+          ? null
+          : `https://books.toscrape.com/catalogue/${nxtLink}`,
       data: bookData,
     };
   } catch (e) {
